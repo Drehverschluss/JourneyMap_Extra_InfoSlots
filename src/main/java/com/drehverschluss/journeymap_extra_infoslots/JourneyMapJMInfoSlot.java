@@ -45,8 +45,12 @@ public class JourneyMapJMInfoSlot implements IClientPlugin {
 	}
 
 	private void infoSlotRegistryEvent(InfoSlotRegistryEvent event) {
-		event.register(getModId(), infoKey1, 1000L, this::getInfoHudText1);
-		event.register(getModId(), infoKey2, 1000L, this::getInfoHudText2);
+		if (ModConfigs.extraInfoConfig.showInfoSlot1) {
+			event.register(getModId(), infoKey1, 1000L, this::getInfoHudText1);
+		}
+		if (ModConfigs.extraInfoConfig.showInfoSlot2) {
+			event.register(getModId(), infoKey2, 1000L, this::getInfoHudText2);
+		}
 	}
 
 	private void optionsRegistryEvent(OptionsRegistryEvent event) {
