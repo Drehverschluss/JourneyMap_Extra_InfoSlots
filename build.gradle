@@ -22,7 +22,7 @@ repositories {
     maven { url = "https://maven.neoforged.net/releases" }
     maven { url = "https://jm.gserv.me/repository/maven-public/" }
 }
-}
+
 
 base {
     archivesName = mod_id
@@ -118,7 +118,6 @@ dependencies {
     compileOnly group: 'info.journeymap', name: 'journeymap-api-forge', version: '2.0.0-1.21-SNAPSHOT', changing: true
     implementation "net.neoforged:neoforge:${neo_version}"
     implementation files('libs/cloth-config-15.0.140-neoforge.jar')
-    implementation files('libs/forgified-fabric-api-0.116.7+2.2.0+1.21.1.jar')
     // ...existing code...
 }
 
