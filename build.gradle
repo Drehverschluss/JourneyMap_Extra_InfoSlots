@@ -22,6 +22,7 @@ repositories {
     maven { url = "https://maven.neoforged.net/releases" }
     maven { url = "https://jm.gserv.me/repository/maven-public/" }
 }
+}
 
 base {
     archivesName = mod_id

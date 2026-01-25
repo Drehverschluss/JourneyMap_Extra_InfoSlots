@@ -46,7 +46,11 @@ displayName="${mod_name}" #mandatory
 
 # The description text for the mod (multi line!) (#mandatory)
 description='''
+<<<<<<< HEAD
 JourneyMap Extra InfoSlots mod.
+=======
+Example mod description.
+>>>>>>> 5878954b39f6c1668210c788c0e3d29a98205700
 '''
 
 # The [[mixins]] block allows you to declare your mixin config to FML so that it gets loaded.
