@@ -14,58 +14,59 @@ import org.jetbrains.annotations.NotNull;
 
 @JourneyMapPlugin(apiVersion = "2.0.0")
 public class JourneyMapJMInfoSlot implements IClientPlugin {
-    private static JourneyMapJMInfoSlot INSTANCE;
-    private IClientAPI api;
-    private Minecraft mc;
-    private final String infoKeyString1 = "menu.journeymapextrainfoslots.infodisplay.info1";
-    private final String infoKeyString2 = "menu.journeymapextrainfoslots.infodisplay.info2";
-    private final Component infoKey1 = Component.translatable(infoKeyString1);
-    private final Component infoKey2 = Component.translatable(infoKeyString2);
+	private static JourneyMapJMInfoSlot INSTANCE;
+	private IClientAPI api;
+	private Minecraft mc;
+	private final String infoKeyString1 = "menu.journeymapextrainfoslots.infodisplay.info1";
+	private final String infoKeyString2 = "menu.journeymapextrainfoslots.infodisplay.info2";
+	private final Component infoKey1 = Component.translatable(infoKeyString1);
+	private final Component infoKey2 = Component.translatable(infoKeyString2);
 
-    public JourneyMapJMInfoSlot() {}
+	public JourneyMapJMInfoSlot() {}
 
-    public static JourneyMapJMInfoSlot getInstance() {
-        return INSTANCE;
-    }
+	public static JourneyMapJMInfoSlot getInstance() {
+		return INSTANCE;
+	}
 
-    @Override
-    public void initialize(@NotNull IClientAPI api) {
-        INSTANCE = this;
-        this.api = api;
-        this.mc = Minecraft.getInstance();
+	@Override
+	public void initialize(@NotNull IClientAPI api) {
+		INSTANCE = this;
+		this.api = api;
+		this.mc = Minecraft.getInstance();
 
-        ClientEventRegistry.INFO_SLOT_REGISTRY_EVENT.subscribe(getModId(), this::infoSlotRegistryEvent);
-        ClientEventRegistry.OPTIONS_REGISTRY_EVENT.subscribe(getModId(), this::optionsRegistryEvent);
-        MinimapEventRegistry.INFO_SLOT_DISPLAY_EVENT.subscribe(getModId(), this::infoSlotDisplayEvent);
-    }
+		ClientEventRegistry.INFO_SLOT_REGISTRY_EVENT.subscribe(this.getModId(), this::infoSlotRegistryEvent);
+		ClientEventRegistry.OPTIONS_REGISTRY_EVENT.subscribe(this.getModId(), this::optionsRegistryEvent);
+		MinimapEventRegistry.INFO_SLOT_DISPLAY_EVENT.subscribe(this.getModId(), this::infoSlotDisplayEvent);
+	}
 
-    @Override
-    public String getModId() {
-        return "journeymap_extra_infoslots";
-    }
+	@Override
+	public String getModId() {
+		return "journeymap_extra_infoslots";
+	}
 
-    private void infoSlotRegistryEvent(InfoSlotRegistryEvent event) {
-        if (JMConfig.showInfoSlot1) {
-            event.register(getModId(), infoKey1, 1000L, this::getInfoHudText1);
-        }
-        if (JMConfig.showInfoSlot2) {
-            event.register(getModId(), infoKey2, 1000L, this::getInfoHudText2);
-        }
-    }
+	private void infoSlotRegistryEvent(InfoSlotRegistryEvent event) {
+		event.register(getModId(), infoKey1, 1000L, this::getInfoHudText1);
+		event.register(getModId(), infoKey2, 1000L, this::getInfoHudText2);
+	}
 
-    private void optionsRegistryEvent(OptionsRegistryEvent event) {
-        // Optionale Einstellungen für den InfoSlot können hier hinzugefügt werden
-    }
+	private void optionsRegistryEvent(OptionsRegistryEvent event) {
+		// Optionale Einstellungen für den InfoSlot können hier hinzugefügt werden
+	}
 
-    private void infoSlotDisplayEvent(InfoSlotDisplayEvent event) {
-        // Hier kann das Verhalten beim Anzeigen angepasst werden
-    }
+	private void infoSlotDisplayEvent(InfoSlotDisplayEvent event) {
+		// Hier kann das Verhalten beim Anzeigen angepasst werden
+	}
 
-    private Component getInfoHudText1() {
-        return Component.literal("InfoSlot 1 ist aktiv!");
-    }
+	private Component getInfoHudText1() {
+		if (mc != null && mc.player != null) {
+			int difficulty = 0; // Platzhalter für echten Wert
+			return Component.literal("Dynamic Difficulty: " + difficulty);
+		} else {
+			return Component.literal("Dynamic Difficulty: N/A");
+		}
+	}
 
-    private Component getInfoHudText2() {
-        return Component.literal("InfoSlot 2 ist aktiv!");
-    }
+	private Component getInfoHudText2() {
+		return Component.literal("InfoSlot 2 ist aktiv!");
+	}
 }

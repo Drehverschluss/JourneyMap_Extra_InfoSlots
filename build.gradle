@@ -21,6 +21,8 @@ repositories {
     // Add here additional repositories if required by some of the dependencies below.
     maven { url = "https://maven.neoforged.net/releases" }
     maven { url = "https://jm.gserv.me/repository/maven-public/" }
+    // Dynamic Difficulty
+    maven { url = "https://maven.muon.rip/releases/" }
 }
 
 
@@ -115,10 +117,14 @@ configurations {
 }
 
 dependencies {
+        // Factory API für Netzwerkkommunikation (nur zur Compilezeit benötigt)
+    compileOnly files('libs/FactoryAPI-1.21.1-1.0.0.jar')
     compileOnly group: 'info.journeymap', name: 'journeymap-api-forge', version: '2.0.0-1.21-SNAPSHOT', changing: true
     implementation "net.neoforged:neoforge:${neo_version}"
-    implementation files('libs/cloth-config-15.0.140-neoforge.jar')
     // ...existing code...
+    // Dynamic-Difficulty-JAR entfernt, um Modulkonflikt zu vermeiden
+    // Dynamic Difficulty als Dependency (NeoForge)
+    compileOnly("dev.muon.dynamic_difficulty:dynamic_difficulty-neoforge:${dynamic_difficulty_version}")
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.
