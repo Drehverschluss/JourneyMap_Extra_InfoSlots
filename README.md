@@ -1,25 +1,37 @@
+# JourneyMap Extra InfoSlots
 
-Installation information
-=======
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/Drehverschluss/JourneyMap_Extra_InfoSlots?style=flat-square)
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/Drehverschluss/JourneyMap_Extra_InfoSlots/gradle.yml?style=flat-square)
 
-This template repository can be directly cloned to get you started with a new
-mod. Simply create a new repository cloned from this one, by following the
-instructions provided by [GitHub](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template).
+## What does this mod do?
 
-Once you have your clone, simply open the repository in the IDE of your choice. The usual recommendation for an IDE is either IntelliJ IDEA or Eclipse.
+**JourneyMap Extra InfoSlots** extends JourneyMap with additional InfoSlots that can display synchronized server-side values.
 
-If at any point you are missing libraries in your IDE, or you've run into problems you can
-run `gradlew --refresh-dependencies` to refresh the local cache. `gradlew clean` to reset everything 
-{this does not affect your code} and then start the process again.
+- Shows, for example, the current mob level at the player's position directly in the JourneyMap HUD
+- Synchronizes values like MobLevelAtPos from server to client via network
+- Compatible with Dynamic Difficulty and NeoForge 1.21.1
+- Easily extendable for more InfoSlots
 
-Mapping Names:
-============
-By default, the MDK is configured to use the official mapping names from Mojang for methods and fields 
-in the Minecraft codebase. These names are covered by a specific license. All modders should be aware of this
-license. For the latest license text, refer to the mapping file itself, or the reference copy here:
-https://github.com/NeoForged/NeoForm/blob/main/Mojang.md
+## Features
+- Live display of the player level in InfoSlot1
+- Live display of the synchronized mob level in InfoSlot2
+- Network sync of server values (e.g. MobLevelAtPos)
+- Integration into the JourneyMap InfoHUD
 
-Additional Resources: 
-==========
-Community Documentation: https://docs.neoforged.net/  
-NeoForged Discord: https://discord.neoforged.net/
+## Installation
+1. Download the latest version from [Releases](https://github.com/Drehverschluss/JourneyMap_Extra_InfoSlots/releases)
+2. Place the JAR file in your `mods` folder
+3. Make sure JourneyMap and Dynamic Difficulty are installed
+4. Start Minecraft with NeoForge 1.21.1
+
+---
+
+## Note on Development
+
+Most of this mod was developed with the help of AI (GitHub Copilot). Many features, network and API integrations, and the documentation were implemented and optimized with AI support. This project demonstrates how modern AI tools can accelerate and simplify mod development.
+
+---
+
+## License
+
+This project is licensed under the MIT License. See the file [LICENSE](LICENSE) for details.

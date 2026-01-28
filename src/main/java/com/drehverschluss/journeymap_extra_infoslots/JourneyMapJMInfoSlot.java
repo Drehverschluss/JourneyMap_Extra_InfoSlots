@@ -40,6 +40,24 @@ public class JourneyMapJMInfoSlot implements IClientPlugin {
 		return "journeymap_extra_infoslots";
 	}
 
+	
+	// Letzter synchronisierter MobLevelAtPos-Wert (vom Server)
+	private static volatile int lastMobLevelAtPos = -1;
+
+	/**
+	 * Wird vom Netzwerk-Handler aufgerufen, um den Wert zu setzen.
+	 */
+	public static void setLastMobLevelAtPos(int mobLevel) {
+		lastMobLevelAtPos = mobLevel;
+	}
+
+	/**
+	 * Gibt den letzten synchronisierten Wert zurück.
+	 */
+	public static int getLastMobLevelAtPos() {
+		return lastMobLevelAtPos;
+	}
+
 	private void infoSlotRegistryEvent(InfoSlotRegistryEvent event) {
 		event.register(getModId(), infoKey1, 1000L, this::getInfoHudText1);
 		event.register(getModId(), infoKey2, 1000L, this::getInfoHudText2);
@@ -55,6 +73,10 @@ public class JourneyMapJMInfoSlot implements IClientPlugin {
 	}
 
 	private Component getInfoHudText2() {
-		return Component.literal("InfoSlot 2 ist aktiv!");
+		if (lastMobLevelAtPos >= 0) {
+			return Component.literal("DynamicDifficulty: " + lastMobLevelAtPos);
+		} else {
+			return Component.literal("DynamicDifficulty: N/A");
+		}
 	}
 }
