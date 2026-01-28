@@ -121,8 +121,6 @@ configurations {
 dependencies {
     compileOnly group: 'info.journeymap', name: 'journeymap-api-forge', version: '2.0.0-1.21-SNAPSHOT', changing: true
     implementation "net.neoforged:neoforge:${neo_version}"
-    // Forgified Fabric API
-    implementation "org.sinytra.forgified-fabric-api:forgified-fabric-api:0.116.7+2.2.0+1.21.1"
     // Dynamic-Difficulty-JAR entfernt, um Modulkonflikt zu vermeiden
     // Dynamic Difficulty als Dependency (NeoForge)
     compileOnly("dev.muon.dynamic_difficulty:dynamic_difficulty-neoforge:${dynamic_difficulty_version}")

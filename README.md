@@ -3,49 +3,35 @@
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/Drehverschluss/JourneyMap_Extra_InfoSlots?style=flat-square)
 ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/Drehverschluss/JourneyMap_Extra_InfoSlots/gradle.yml?style=flat-square)
 
-## Was macht dieser Mod?
+## What does this mod do?
 
-**JourneyMap Extra InfoSlots** erweitert JourneyMap um zusätzliche InfoSlots, die serverseitige Werte synchronisiert anzeigen können. 
+**JourneyMap Extra InfoSlots** extends JourneyMap with additional InfoSlots that can display synchronized server-side values.
 
-- Zeigt z.B. den aktuellen Mob-Level an der Spielerposition direkt im JourneyMap-HUD an
-- Synchronisiert Werte wie MobLevelAtPos per Netzwerk vom Server zum Client
-- Kompatibel mit Dynamic Difficulty und NeoForge 1.21.1
-- Einfach erweiterbar für weitere InfoSlots
+- Shows, for example, the current mob level at the player's position directly in the JourneyMap HUD
+- Synchronizes values like MobLevelAtPos from server to client via network
+- Compatible with Dynamic Difficulty and NeoForge 1.21.1
+- Easily extendable for more InfoSlots
 
 ## Features
-- Live-Anzeige des Spieler levels im InfoSlot1
-- Live-Anzeige des synchronisierten Mob-Levels im InfoSlot2
-- Netzwerk-Sync von Serverwerten (z.B. MobLevelAtPos)
-- Integration in das JourneyMap InfoHUD
+- Live display of the player level in InfoSlot1
+- Live display of the synchronized mob level in InfoSlot2
+- Network sync of server values (e.g. MobLevelAtPos)
+- Integration into the JourneyMap InfoHUD
 
 ## Installation
-1. Lade die neueste Version von [Releases](https://github.com/Drehverschluss/JourneyMap_Extra_InfoSlots/releases) herunter
-2. Lege die JAR-Datei in deinen `mods`-Ordner
-3. Stelle sicher, dass JourneyMap und Dynamic Difficulty installiert sind
-4. Starte Minecraft mit NeoForge 1.21.1
+1. Download the latest version from [Releases](https://github.com/Drehverschluss/JourneyMap_Extra_InfoSlots/releases)
+2. Place the JAR file in your `mods` folder
+3. Make sure JourneyMap and Dynamic Difficulty are installed
+4. Start Minecraft with NeoForge 1.21.1
 
 ---
 
-Mapping Names:
-============
-By default, the MDK is configured to use the official mapping names from Mojang for methods and fields 
-in the Minecraft codebase. These names are covered by a specific license. All modders should be aware of this
-license. For the latest license text, refer to the mapping file itself, or the reference copy here:
-https://github.com/NeoForged/NeoForm/blob/main/Mojang.md
+## Note on Development
 
-Additional Resources: 
-==========
-Community Documentation: https://docs.neoforged.net/  
-NeoForged Discord: https://discord.neoforged.net/
+Most of this mod was developed with the help of AI (GitHub Copilot). Many features, network and API integrations, and the documentation were implemented and optimized with AI support. This project demonstrates how modern AI tools can accelerate and simplify mod development.
 
 ---
 
-## Lizenz
+## License
 
-Dieses Projekt steht unter der MIT License. Siehe die Datei [LICENSE](LICENSE) für Details.
-
----
-
-## Hinweis zur Entwicklung
-
-Ein Großteil dieses Mods wurde mit Unterstützung von AI (GitHub Copilot) entwickelt. Viele Features, Netzwerk- und API-Anbindungen sowie die Dokumentation wurden KI-gestützt umgesetzt und optimiert. Das Projekt zeigt, wie moderne AI-Tools die Mod-Entwicklung beschleunigen und vereinfachen können.
+This project is licensed under the MIT License. See the file [LICENSE](LICENSE) for details.
