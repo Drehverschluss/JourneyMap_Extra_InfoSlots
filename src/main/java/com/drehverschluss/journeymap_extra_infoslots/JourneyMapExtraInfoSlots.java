@@ -20,7 +20,9 @@ public class JourneyMapExtraInfoSlots {
     // FML will recognize some parameter types like IEventBus or ModContainer and pass them in automatically.
     public JourneyMapExtraInfoSlots(IEventBus modEventBus, ModContainer modContainer) {
         LOGGER.info("JourneyMap Extra InfoSlots mod initialized");
-        // ModConfigs.init(); entfernt, da keine Config mehr verwendet wird
+        // Netzwerk-Handler für CustomPayload registrieren
+        modEventBus.addListener(ModNetworking::register);
         // Keine späte Registrierung, InfoSlot wird wie gewohnt automatisch von JourneyMap geladen
+        ServerTickLevelLogger.register();
     }
 }

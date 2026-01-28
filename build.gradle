@@ -23,8 +23,8 @@ repositories {
     maven { url = "https://jm.gserv.me/repository/maven-public/" }
     // Dynamic Difficulty
     maven { url = "https://maven.muon.rip/releases/" }
-        // Fzzy Config entfernt
-        maven { url = "https://thedarkcolour.github.io/KotlinForForge/" }
+    // Forgified Fabric API
+    maven { url = "https://maven.su5ed.dev/releases" }
 }
 
 
@@ -121,7 +121,8 @@ configurations {
 dependencies {
     compileOnly group: 'info.journeymap', name: 'journeymap-api-forge', version: '2.0.0-1.21-SNAPSHOT', changing: true
     implementation "net.neoforged:neoforge:${neo_version}"
-    // ...existing code...
+    // Forgified Fabric API
+    implementation "org.sinytra.forgified-fabric-api:forgified-fabric-api:0.116.7+2.2.0+1.21.1"
     // Dynamic-Difficulty-JAR entfernt, um Modulkonflikt zu vermeiden
     // Dynamic Difficulty als Dependency (NeoForge)
     compileOnly("dev.muon.dynamic_difficulty:dynamic_difficulty-neoforge:${dynamic_difficulty_version}")
