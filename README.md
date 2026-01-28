@@ -1,16 +1,30 @@
+# JourneyMap Extra InfoSlots
 
-Installation information
-=======
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/Drehverschluss/JourneyMap_Extra_InfoSlots?style=flat-square)
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/Drehverschluss/JourneyMap_Extra_InfoSlots/gradle.yml?style=flat-square)
 
-This template repository can be directly cloned to get you started with a new
-mod. Simply create a new repository cloned from this one, by following the
-instructions provided by [GitHub](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template).
+## Was macht dieser Mod?
 
-Once you have your clone, simply open the repository in the IDE of your choice. The usual recommendation for an IDE is either IntelliJ IDEA or Eclipse.
+**JourneyMap Extra InfoSlots** erweitert JourneyMap um zusätzliche InfoSlots, die serverseitige Werte synchronisiert anzeigen können. 
 
-If at any point you are missing libraries in your IDE, or you've run into problems you can
-run `gradlew --refresh-dependencies` to refresh the local cache. `gradlew clean` to reset everything 
-{this does not affect your code} and then start the process again.
+- Zeigt z.B. den aktuellen Mob-Level an der Spielerposition direkt im JourneyMap-HUD an
+- Synchronisiert Werte wie MobLevelAtPos per Netzwerk vom Server zum Client
+- Kompatibel mit Dynamic Difficulty und NeoForge 1.21.1
+- Einfach erweiterbar für weitere InfoSlots
+
+## Features
+- Live-Anzeige des Spieler levels im InfoSlot1
+- Live-Anzeige des synchronisierten Mob-Levels im InfoSlot2
+- Netzwerk-Sync von Serverwerten (z.B. MobLevelAtPos)
+- Integration in das JourneyMap InfoHUD
+
+## Installation
+1. Lade die neueste Version von [Releases](https://github.com/Drehverschluss/JourneyMap_Extra_InfoSlots/releases) herunter
+2. Lege die JAR-Datei in deinen `mods`-Ordner
+3. Stelle sicher, dass JourneyMap und Dynamic Difficulty installiert sind
+4. Starte Minecraft mit NeoForge 1.21.1
+
+---
 
 Mapping Names:
 ============
