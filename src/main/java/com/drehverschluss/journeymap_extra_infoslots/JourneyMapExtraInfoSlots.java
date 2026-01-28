@@ -1,6 +1,7 @@
 package com.drehverschluss.journeymap_extra_infoslots;
 
 import org.slf4j.Logger;
+
 import com.mojang.logging.LogUtils;
 
 import net.neoforged.bus.api.IEventBus;
@@ -22,5 +23,6 @@ public class JourneyMapExtraInfoSlots {
         // Netzwerk-Handler für CustomPayload registrieren
         modEventBus.addListener(ModNetworking::register);
         // Keine späte Registrierung, InfoSlot wird wie gewohnt automatisch von JourneyMap geladen
+        ServerTickLevelLogger.register();
     }
 }
