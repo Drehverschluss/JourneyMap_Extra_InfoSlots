@@ -23,8 +23,7 @@ repositories {
     maven { url = "https://jm.gserv.me/repository/maven-public/" }
     // Dynamic Difficulty
     maven { url = "https://maven.muon.rip/releases/" }
-        // Fzzy Config
-        maven { name = "FzzyMaven"; url = "https://maven.fzzyhmstrs.me/" }
+        // Fzzy Config entfernt
         maven { url = "https://thedarkcolour.github.io/KotlinForForge/" }
 }
 
@@ -126,8 +125,7 @@ dependencies {
     // Dynamic-Difficulty-JAR entfernt, um Modulkonflikt zu vermeiden
     // Dynamic Difficulty als Dependency (NeoForge)
     compileOnly("dev.muon.dynamic_difficulty:dynamic_difficulty-neoforge:${dynamic_difficulty_version}")
-    // Fzzy Config Dependency
-    implementation "me.fzzyhmstrs:fzzy_config:${fzzyConfigVersion}"
+    // Fzzy Config Dependency entfernt
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.

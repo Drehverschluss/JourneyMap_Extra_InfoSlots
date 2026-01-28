@@ -1,23 +1,20 @@
 package com.drehverschluss.journeymap_extra_infoslots;
 
+
 import org.jetbrains.annotations.NotNull;
 
 import dev.muon.dynamic_difficulty.api.LevelingAPI;
 import journeymap.api.v2.client.IClientAPI;
 import journeymap.api.v2.client.IClientPlugin;
 import journeymap.api.v2.client.JourneyMapPlugin;
-import journeymap.api.v2.client.event.InfoSlotDisplayEvent;
 import journeymap.api.v2.client.event.RegistryEvent.InfoSlotRegistryEvent;
-import journeymap.api.v2.client.event.RegistryEvent.OptionsRegistryEvent;
 import journeymap.api.v2.common.event.ClientEventRegistry;
-import journeymap.api.v2.common.event.MinimapEventRegistry;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
 
 @JourneyMapPlugin(apiVersion = "2.0.0")
 public class JourneyMapJMInfoSlot implements IClientPlugin {
 	private static JourneyMapJMInfoSlot INSTANCE;
-	private IClientAPI api;
 	private Minecraft mc;
 	private final String infoKeyString1 = "menu.journeymapextrainfoslots.infodisplay.info1";
 	private final String infoKeyString2 = "menu.journeymapextrainfoslots.infodisplay.info2";
@@ -33,12 +30,9 @@ public class JourneyMapJMInfoSlot implements IClientPlugin {
 	@Override
 	public void initialize(@NotNull IClientAPI api) {
 		INSTANCE = this;
-		this.api = api;
 		this.mc = Minecraft.getInstance();
 
 		ClientEventRegistry.INFO_SLOT_REGISTRY_EVENT.subscribe(this.getModId(), this::infoSlotRegistryEvent);
-		ClientEventRegistry.OPTIONS_REGISTRY_EVENT.subscribe(this.getModId(), this::optionsRegistryEvent);
-		MinimapEventRegistry.INFO_SLOT_DISPLAY_EVENT.subscribe(this.getModId(), this::infoSlotDisplayEvent);
 	}
 
 	@Override
@@ -47,26 +41,14 @@ public class JourneyMapJMInfoSlot implements IClientPlugin {
 	}
 
 	private void infoSlotRegistryEvent(InfoSlotRegistryEvent event) {
-		if (ModConfigs.extraInfoConfig.showInfoSlot1) {
-			event.register(getModId(), infoKey1, 1000L, this::getInfoHudText1);
-		}
-		if (ModConfigs.extraInfoConfig.showInfoSlot2) {
-			event.register(getModId(), infoKey2, 1000L, this::getInfoHudText2);
-		}
-	}
-
-	private void optionsRegistryEvent(OptionsRegistryEvent event) {
-		// Optionale Einstellungen für den InfoSlot können hier hinzugefügt werden
-	}
-
-	private void infoSlotDisplayEvent(InfoSlotDisplayEvent event) {
-		// Hier kann das Verhalten beim Anzeigen angepasst werden
+		event.register(getModId(), infoKey1, 1000L, this::getInfoHudText1);
+		event.register(getModId(), infoKey2, 1000L, this::getInfoHudText2);
 	}
 
 	private Component getInfoHudText1() {
 		   if (mc != null && mc.player != null) {
 			   int playerLevel = LevelingAPI.getLevel(mc.player);
-			   return Component.literal("Player Level (Location): " + playerLevel);
+			   return Component.literal("Player Level: " + playerLevel);
 		   } else {
 			   return Component.literal("Player Level: N/A");
 		   }
