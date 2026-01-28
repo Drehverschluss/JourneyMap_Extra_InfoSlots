@@ -43,3 +43,9 @@ NeoForged Discord: https://discord.neoforged.net/
 ## Lizenz
 
 Dieses Projekt steht unter der MIT License. Siehe die Datei [LICENSE](LICENSE) für Details.
+
+---
+
+## Hinweis zur Entwicklung
+
+Ein Großteil dieses Mods wurde mit Unterstützung von AI (GitHub Copilot) entwickelt. Viele Features, Netzwerk- und API-Anbindungen sowie die Dokumentation wurden KI-gestützt umgesetzt und optimiert. Das Projekt zeigt, wie moderne AI-Tools die Mod-Entwicklung beschleunigen und vereinfachen können.
