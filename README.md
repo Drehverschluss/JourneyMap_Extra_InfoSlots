@@ -37,3 +37,9 @@ Additional Resources:
 ==========
 Community Documentation: https://docs.neoforged.net/  
 NeoForged Discord: https://discord.neoforged.net/
+
+---
+
+## Lizenz
+
+Dieses Projekt steht unter der MIT License. Siehe die Datei [LICENSE](LICENSE) für Details.
