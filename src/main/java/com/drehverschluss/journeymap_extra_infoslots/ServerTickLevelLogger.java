@@ -1,10 +1,10 @@
 package com.drehverschluss.journeymap_extra_infoslots;
 
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.monster.Zombie;
 import dev.muon.dynamic_difficulty.api.LevelingAPI;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.monster.Zombie;
 
 @SuppressWarnings("unused")
 public class ServerTickLevelLogger {
@@ -25,7 +25,7 @@ public class ServerTickLevelLogger {
                         // Sende Wert an Client
                         ModNetworking.sendMobLevelToClient(player, mobLevel);
                         // Optional: Logging
-                        //JourneyMapExtraInfoSlots.LOGGER.info("[ServerTickLevelLogger] Player {}: MobLevelAtPos (Zombie) = {}", player.getGameProfile().getName(), mobLevel);
+                        JourneyMapExtraInfoSlots.LOGGER.info("[ServerTickLevelLogger] Player {}: MobLevelAtPos (Zombie) = {}", player.getGameProfile().getName(), mobLevel);
                     }
                 }
             }
