@@ -3,9 +3,6 @@ package com.drehverschluss.journeymap_extra_infoslots;
 
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
-import net.minecraft.network.protocol.common.custom.CustomPacketPayload.Type;
-import net.minecraft.network.protocol.Packet;
 import net.neoforged.neoforge.network.event.RegisterPayloadHandlersEvent;
 
 public class ModNetworking {
