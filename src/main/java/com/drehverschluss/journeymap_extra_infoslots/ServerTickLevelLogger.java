@@ -25,7 +25,7 @@ public class ServerTickLevelLogger {
                         // Sende Wert an Client
                         ModNetworking.sendMobLevelToClient(player, mobLevel);
                         // Optional: Logging
-                        JourneyMapExtraInfoSlots.LOGGER.info("[ServerTickLevelLogger] Player {}: MobLevelAtPos (Zombie) = {}", player.getGameProfile().getName(), mobLevel);
+                        //JourneyMapExtraInfoSlots.LOGGER.info("[ServerTickLevelLogger] Player {}: MobLevelAtPos (Zombie) = {}", player.getGameProfile().getName(), mobLevel);
                     }
                 }
             }
