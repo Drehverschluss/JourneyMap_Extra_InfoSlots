@@ -1,4 +1,6 @@
 {
-  "menu.journeymapextrainfoslots.infodisplay.info1": "InfoSlot1",
-  "menu.journeymapextrainfoslots.infodisplay.info2": "InfoSlot2"
+  "menu.journeymapextrainfoslots.infodisplay.info1": "Player Level",
+  "menu.journeymapextrainfoslots.infodisplay.info1.tooltip": "Shows your current player level from Dynamic Difficulty.",
+  "menu.journeymapextrainfoslots.infodisplay.info2": "Dynamic Difficulty",
+  "menu.journeymapextrainfoslots.infodisplay.info2.tooltip": "Shows the synced mob difficulty level at your current position."
 }

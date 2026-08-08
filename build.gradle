@@ -119,10 +119,8 @@ configurations {
 }
 
 dependencies {
-    compileOnly group: 'info.journeymap', name: 'journeymap-api-forge', version: '2.0.0-1.21-SNAPSHOT', changing: true
+    compileOnly group: 'info.journeymap', name: 'journeymap-api-forge', version: '2.0.0-1.21.1-SNAPSHOT', changing: true
     implementation "net.neoforged:neoforge:${neo_version}"
-    // Forgified Fabric API
-    implementation "org.sinytra.forgified-fabric-api:forgified-fabric-api:0.116.7+2.2.0+1.21.1"
     // Dynamic-Difficulty-JAR entfernt, um Modulkonflikt zu vermeiden
     // Dynamic Difficulty als Dependency (NeoForge)
     compileOnly("dev.muon.dynamic_difficulty:dynamic_difficulty-neoforge:${dynamic_difficulty_version}")
@@ -133,14 +131,16 @@ dependencies {
 // A missing property will result in an error. Properties are expanded using ${} Groovy notation.
 var generateModMetadata = tasks.register("generateModMetadata", ProcessResources) {
     var replaceProperties = [
-            minecraft_version      : minecraft_version,
-            minecraft_version_range: minecraft_version_range,
-            neo_version            : neo_version,
-            loader_version_range   : loader_version_range,
-            mod_id                 : mod_id,
-            mod_name               : mod_name,
-            mod_license            : mod_license,
-            mod_version            : mod_version,
+            minecraft_version         : minecraft_version,
+            minecraft_version_range   : minecraft_version_range,
+            neo_version               : neo_version,
+            loader_version_range      : loader_version_range,
+            mod_id                    : mod_id,
+            mod_name                  : mod_name,
+            mod_license               : mod_license,
+            mod_version               : mod_version,
+            dynamic_difficulty_version: dynamic_difficulty_version,
+            journeymap_version        : journeymap_version,
     ]
     inputs.properties replaceProperties
     expand replaceProperties
