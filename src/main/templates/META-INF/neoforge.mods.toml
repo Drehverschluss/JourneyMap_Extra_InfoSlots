@@ -15,7 +15,7 @@ loaderVersion="${loader_version_range}" #mandatory
 license="${mod_license}"
 
 # A URL to refer people to when problems occur with this mod
-#issueTrackerURL="https://change.me.to.your.issue.tracker.example.invalid/" #optional
+issueTrackerURL="https://github.com/Drehverschluss/JourneyMap_Extra_InfoSlots/issues" #optional
 
 # A list of mods - how many allowed here is determined by the individual mod loader
 [[mods]] #mandatory
@@ -91,6 +91,25 @@ Displays the mob level in a new InfoSlot HUD element.
     type="required"
     # This version range declares a minimum of the current minecraft version up to but not including the next major version
     versionRange="${minecraft_version_range}"
+    ordering="NONE"
+    side="BOTH"
+
+# JourneyMap is required for the InfoSlot HUD feature (IClientPlugin / IClientAPI classes are loaded from its jar at runtime).
+# Client-only: our server-side networking/tick logic works fine without JourneyMap installed on the server.
+[[dependencies.${mod_id}]]
+    modId="journeymap"
+    type="required"
+    reason="Registers the InfoSlot HUD elements this mod adds."
+    versionRange="[${journeymap_version},)"
+    ordering="NONE"
+    side="CLIENT"
+
+# Dynamic Difficulty is required on both sides: LevelingAPI is called client-side (player level) and server-side (mob level calc).
+[[dependencies.${mod_id}]]
+    modId="dynamic_difficulty"
+    type="required"
+    reason="Supplies the LevelingAPI used to read player and mob levels."
+    versionRange="[${dynamic_difficulty_version},)"
     ordering="NONE"
     side="BOTH"
 
