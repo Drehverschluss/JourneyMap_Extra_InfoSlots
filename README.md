@@ -1,7 +1,7 @@
 # JourneyMap Extra InfoSlots
 
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/Drehverschluss/JourneyMap_Extra_InfoSlots?style=flat-square)
-![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/Drehverschluss/JourneyMap_Extra_InfoSlots/gradle.yml?style=flat-square)
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/Drehverschluss/JourneyMap_Extra_InfoSlots/build.yml?style=flat-square)
 
 ## What does this mod do?
 
